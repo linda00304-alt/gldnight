@@ -1,0 +1,427 @@
+Claude
+Gld annual night html · TXT
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GLD ANNUAL NIGHT</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
+ 
+<style>
+/* =========================================================
+   디자인 토큰 (색상은 여기서 한 번에 수정하세요)
+   ========================================================= */
+:root{
+  --black:#07060b;
+  --deep-purple:#1a1030;
+  --purple-mid:#2a1a4a;
+  --ivory:#ece6dc;
+  --gold:#c9a55c;
+  --gold-soft:rgba(201,165,92,.35);
+  --text:#d9d3e3;
+  --text-dim:#8f87a3;
+  --serif:'Cormorant Garamond','Noto Serif KR',serif;
+  --sans:'Noto Sans KR',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--black);
+  color:var(--text);
+  font-family:var(--sans);
+  font-weight:300;
+  line-height:1.8;
+  -webkit-font-smoothing:antialiased;
+}
+section{padding:120px 24px;max-width:960px;margin:0 auto}
+.label{
+  font-family:var(--serif);
+  font-size:12px;
+  letter-spacing:.35em;
+  color:var(--gold);
+  margin-bottom:20px;
+  display:block;
+}
+h2{
+  font-family:var(--serif);
+  font-weight:400;
+  font-size:clamp(34px,5vw,52px);
+  color:var(--ivory);
+  line-height:1.2;
+  margin-bottom:28px;
+}
+p{color:var(--text-dim);font-size:15px;max-width:640px}
+.rule{width:48px;height:1px;background:var(--gold);margin:0 0 32px}
+ 
+/* =========================================================
+   1. HERO — 조명 + 액자
+   ========================================================= */
+.hero{
+  position:relative;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:80px 24px;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(42,26,74,.55), transparent 60%),
+    linear-gradient(180deg,#0b0814 0%, var(--black) 100%);
+  overflow:hidden;
+}
+.hero-top{
+  position:absolute;top:28px;left:0;right:0;
+  font-family:var(--serif);
+  font-size:11px;letter-spacing:.4em;
+  color:var(--text-dim);
+}
+/* 천장 조명 원점 */
+.spot-source{
+  position:absolute;top:0;left:50%;
+  width:10px;height:10px;border-radius:50%;
+  transform:translateX(-50%);
+  background:#fff;
+  box-shadow:0 0 18px 6px rgba(255,255,255,.7);
+}
+/* 조명 빛줄기 */
+.spot-beam{
+  position:absolute;top:0;left:50%;
+  width:620px;height:100%;
+  transform:translateX(-50%);
+  background:linear-gradient(180deg,
+    rgba(255,248,230,.18) 0%,
+    rgba(255,248,230,.06) 55%,
+    transparent 85%);
+  clip-path:polygon(47% 0,53% 0,100% 100%,0 100%);
+  pointer-events:none;
+}
+/* 바닥 빛 웅덩이 */
+.spot-floor{
+  position:absolute;bottom:6%;left:50%;
+  width:760px;height:160px;
+  transform:translateX(-50%);
+  background:radial-gradient(ellipse at center, rgba(255,248,230,.20), transparent 70%);
+  pointer-events:none;
+}
+.hero-eyebrow{
+  position:relative;z-index:2;
+  font-family:var(--serif);
+  font-size:12px;letter-spacing:.4em;
+  color:var(--gold);
+  margin-bottom:36px;
+}
+/* 액자 (화면을 꽉 채우지 않도록 max-width 제한) */
+.frame{
+  position:relative;z-index:2;
+  width:min(560px,78%);
+  padding:14px;
+  background:linear-gradient(145deg,#d8b86e,#8a6b2c 50%,#d8b86e);
+  box-shadow:
+    0 0 60px rgba(201,165,92,.18),
+    0 30px 80px rgba(0,0,0,.8);
+}
+.frame-inner{
+  border:1px solid rgba(0,0,0,.5);
+  padding:10px;
+  background:#0d0a18;
+}
+.frame-mat{
+  background:linear-gradient(160deg,var(--deep-purple),var(--black));
+  padding:64px 24px;
+  border:1px solid var(--gold-soft);
+}
+.frame-mat h1{
+  font-family:var(--serif);
+  font-weight:300;
+  font-size:clamp(34px,6vw,60px);
+  line-height:1.1;
+  letter-spacing:.14em;
+  color:var(--ivory);
+}
+/* 전시 캡션 */
+.caption{
+  position:relative;z-index:2;
+  margin-top:34px;
+  font-size:13px;
+  letter-spacing:.15em;
+  color:var(--text-dim);
+}
+.caption::before{
+  content:"";display:block;width:36px;height:1px;
+  background:var(--gold);margin:0 auto 16px;
+}
+ 
+/* =========================================================
+   2. A shared beginning.
+   ========================================================= */
+#beginning .sub{
+  font-size:17px;color:var(--ivory);margin-bottom:20px;
+}
+ 
+/* =========================================================
+   3. An evening in chapters.
+   ========================================================= */
+.chapter{
+  padding:32px 0;
+  border-top:1px solid rgba(201,165,92,.2);
+}
+.chapter:last-of-type{border-bottom:1px solid rgba(201,165,92,.2)}
+.chapter .ch-label{
+  font-family:var(--serif);
+  font-size:12px;letter-spacing:.3em;color:var(--gold);
+  display:block;margin-bottom:10px;
+}
+.chapter h3{
+  font-family:var(--sans);
+  font-weight:400;font-size:19px;
+  color:var(--ivory);margin-bottom:6px;
+}
+.chapter p{font-size:14px}
+.chapters-note{margin-top:28px;font-size:13px}
+ 
+/* =========================================================
+   4. Dress Code
+   ========================================================= */
+.swatches{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:16px;margin:36px 0 12px;
+}
+.swatch{height:120px;border:1px solid rgba(255,255,255,.08)}
+.sw-navy{background:#141a33}
+.sw-ivory{background:var(--ivory)}
+.sw-gold{background:var(--gold)}
+.swatch-names{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:16px;
+  font-size:12px;color:var(--text-dim);letter-spacing:.1em;
+  margin-bottom:40px;
+}
+.dress-card{
+  background:linear-gradient(160deg,var(--deep-purple),#0e0a1c);
+  border:1px solid rgba(201,165,92,.25);
+  padding:36px 32px;
+  margin-bottom:20px;
+}
+.dress-card .label{margin-bottom:12px}
+.dress-card p{font-size:14px}
+ 
+/* =========================================================
+   5. Plan your evening
+   ========================================================= */
+.plan-item{
+  display:grid;grid-template-columns:160px 1fr;gap:24px;
+  padding:22px 0;
+  border-top:1px solid rgba(201,165,92,.2);
+}
+.plan-item:last-child{border-bottom:1px solid rgba(201,165,92,.2)}
+.plan-item .k{
+  font-family:var(--serif);font-size:12px;
+  letter-spacing:.3em;color:var(--gold);
+}
+.plan-item .v{color:var(--ivory);font-size:15px}
+.plan-item .v a{color:var(--gold);text-decoration:none;border-bottom:1px solid var(--gold-soft)}
+ 
+/* =========================================================
+   6. Be part of the evening (CTA)
+   ========================================================= */
+.cta{
+  text-align:center;
+  background:radial-gradient(ellipse at 50% 100%, rgba(42,26,74,.5), transparent 70%);
+  max-width:none;
+}
+.cta .inner{max-width:640px;margin:0 auto}
+.cta p{margin:0 auto 36px}
+.btn{
+  display:inline-block;
+  padding:16px 44px;
+  border:1px solid var(--gold);
+  color:var(--gold);
+  text-decoration:none;
+  font-size:13px;letter-spacing:.25em;
+  transition:background .3s,color .3s;
+}
+.btn:hover,.btn:focus-visible{background:var(--gold);color:var(--black);outline:none}
+.cta .note{margin-top:28px;font-size:12px}
+ 
+/* =========================================================
+   Footer
+   ========================================================= */
+footer{
+  text-align:center;
+  padding:60px 24px 80px;
+  border-top:1px solid rgba(201,165,92,.15);
+}
+footer .brand{
+  font-family:var(--serif);font-size:16px;
+  letter-spacing:.4em;color:var(--ivory);margin-bottom:10px;
+}
+footer .small{font-size:11px;color:var(--text-dim);letter-spacing:.1em}
+ 
+@media (max-width:600px){
+  section{padding:80px 20px}
+  .plan-item{grid-template-columns:1fr;gap:6px}
+  .frame-mat{padding:44px 16px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .btn{transition:none}
+}
+</style>
+</head>
+ 
+<body>
+ 
+<!-- =========================================================
+     1. HERO (첫 화면)
+     ========================================================= -->
+<header class="hero">
+  <div class="hero-top">GLD · EXHIBITION OF THE YEAR</div> <!-- THE NIGHT BRINGS US TOGETHER 
+  <div class="spot-source"></div>
+  <div class="spot-beam"></div>
+  <div class="spot-floor"></div>
+ 
+  <div class="hero-eyebrow">A NIGHT OF GLD</div> <!-- ★ 제목 위 작은 문구: 임시 문구 -->
+ 
+  <div class="frame">
+    <div class="frame-inner">
+      <div class="frame-mat">
+        <h1>GLD<br>ANNUAL NIGHT</h1>
+      </div>
+    </div>
+  </div>
+ 
+  <div class="caption">연말 파티 안내</div> <!-- ★ 제목 아래 한글 부제: 임시 문구 --> 글로벌리더학부의 밤
+</header>
+ 
+ 
+<!-- =========================================================
+     2. A shared beginning.
+     ========================================================= -->
+<section id="beginning">
+  <span class="label">THE INVITATION</span> <!-- ★ 임시 라벨 -->
+  <h2>A shared beginning.</h2>
+  <p class="sub">여기에 한 줄 소개 문구를 입력하세요.</p>
+  <p>여기에 본문 설명 문단을 입력하세요. 행사의 취지와 분위기를 소개하는 2~3문장 정도의 내용이 들어갑니다.</p>
+</section>
+ 
+ 
+<!-- =========================================================
+     3. An evening in chapters.
+     ========================================================= -->
+<section id="chapters">
+  <span class="label">THE PROGRAM</span> <!-- ★ 임시 라벨 -->
+  <h2>An evening in chapters.</h2>
+  <p style="margin-bottom:40px">여기에 프로그램 소개 한 줄을 입력하세요.</p>
+ 
+  <div class="chapter">
+    <span class="ch-label">CHAPTER 01</span>
+    <h3>첫 번째 챕터 제목</h3>
+    <p>첫 번째 챕터 설명을 입력하세요.</p>
+  </div>
+ 
+  <div class="chapter">
+    <span class="ch-label">CHAPTER 02</span>
+    <h3>두 번째 챕터 제목</h3>
+    <p>두 번째 챕터 설명을 입력하세요.</p>
+  </div>
+ 
+  <div class="chapter">
+    <span class="ch-label">CHAPTER 03</span>
+    <h3>세 번째 챕터 제목</h3>
+    <p>세 번째 챕터 설명을 입력하세요.</p>
+  </div>
+ 
+  <p class="chapters-note">프로그램 하단 안내 문구를 입력하세요.</p>
+</section>
+ 
+ 
+<!-- =========================================================
+     4. Dress Code
+     ========================================================= -->
+<section id="dresscode">
+  <span class="label">THE ATTIRE</span> <!-- ★ 임시 라벨 -->
+  <h2>Dress Code</h2>
+  <p>드레스코드 소개 문구를 입력하세요.</p>
+ 
+  <div class="swatches">
+    <div class="swatch sw-navy"></div>
+    <div class="swatch sw-ivory"></div>
+    <div class="swatch sw-gold"></div>
+  </div>
+  <div class="swatch-names">
+    <span>NAVY</span>
+    <span>IVORY</span>
+    <span>GOLD</span>
+  </div>
+ 
+  <div class="dress-card">
+    <span class="label">RECOMMENDED</span> <!-- ★ 카드 1 라벨: 임시 -->
+    <p>권장 복장 설명을 입력하세요.</p>
+  </div>
+ 
+  <div class="dress-card">
+    <span class="label">PLEASE AVOID</span> <!-- ★ 카드 2 라벨: 임시 -->
+    <p>피해야 할 복장 설명을 입력하세요.</p>
+  </div>
+</section>
+ 
+ 
+<!-- =========================================================
+     5. Plan your evening
+     ========================================================= -->
+<section id="plan">
+  <span class="label">THE DETAILS</span> <!-- ★ 임시 라벨 -->
+  <h2>Plan your evening</h2>
+ 
+  <div class="plan-item">
+    <span class="k">DATE</span>
+    <span class="v">날짜를 입력하세요</span>
+  </div>
+  <div class="plan-item">
+    <span class="k">TIME</span>
+    <span class="v">시간을 입력하세요</span>
+  </div>
+  <div class="plan-item">
+    <span class="k">VENUE</span>
+    <span class="v">장소를 입력하세요 (<a href="#">지도 보기</a>)</span>
+  </div>
+  <div class="plan-item">
+    <span class="k">DRESS CODE</span>
+    <span class="v">드레스코드를 입력하세요</span>
+  </div>
+  <div class="plan-item">
+    <span class="k">CONTACT</span>
+    <span class="v">문의처를 입력하세요</span>
+  </div>
+</section>
+ 
+ 
+<!-- =========================================================
+     6. Be part of the evening (CTA)
+     ========================================================= -->
+<section class="cta" id="join">
+  <div class="inner">
+    <span class="label">RSVP</span> <!-- ★ 임시 라벨 -->
+    <h2>Be part of the evening</h2>
+    <p>참석 신청 안내 문구를 입력하세요.</p>
+    <a class="btn" href="#">참석 신청하기</a> <!-- ★ 버튼 문구/링크 수정 -->
+    <p class="note">신청 마감 안내 문구를 입력하세요.</p>
+  </div>
+</section>
+ 
+ 
+<!-- =========================================================
+     Footer
+     ========================================================= -->
+<footer>
+  <div class="brand">GLD ANNUAL NIGHT</div>
+  <div class="small">하단 부가 문구를 입력하세요</div>
+</footer>
+ 
+</body>
+</html>
+ 
+Claude가 응답을 완료했습니다
